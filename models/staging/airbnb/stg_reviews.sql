@@ -3,7 +3,9 @@ WITH raw_reviews AS (
     FROM {{ source('airbnb', 'reviews') }}
 )
 
-SELECT listing_id,
+SELECT 
+    {{ dbt_utils.generate_surrogate_key(['listing_id', 'date', 'reviewer_name', 'comments']) }} AS review_id,
+    listing_id,
     date as review_date,
     reviewer_name,
     comments as review_text,

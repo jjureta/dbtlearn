@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: src_hosts
+  - name: stg_hosts
     description: Source hosts table.
     columns:
       - name: host_id
@@ -9,7 +9,7 @@ models:
           - not_null
           - unique  
 
-  - name: src_listings
+  - name: stg_listings
     description: Source listings table.
     columns:
       - name: listing_id
@@ -17,7 +17,7 @@ models:
           - not_null
           - unique 
 
-  - name: src_reviews
+  - name: stg_reviews
     description: Source reviews table.
     columns:
       - name: review_id

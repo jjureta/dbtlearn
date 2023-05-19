@@ -5,13 +5,13 @@
     )
 }} 
 
-WITH src_reviews AS (
+WITH stg_reviews AS (
     SELECT *
-    FROM {{ ref('src_reviews') }}
+    FROM {{ ref('stg_reviews') }}
 )
 SELECT 
     *
-FROM src_reviews
+FROM stg_reviews
 WHERE review_text is not null 
     {% if is_incremental() %}
     AND review_date > (

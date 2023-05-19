@@ -4,9 +4,9 @@
     )
 }} 
 
-WITH src_listings AS (
+WITH stg_listings AS (
     SELECT *
-    FROM {{ ref('src_listings') }}
+    FROM {{ ref('stg_listings') }}
 )
 SELECT listing_id,
     listing_name,
@@ -19,4 +19,4 @@ SELECT listing_id,
     REPLACE(price_str, '$')::NUMBER(10, 2) AS price,
     created_at,
     updated_at
-FROM src_listings
+FROM stg_listings

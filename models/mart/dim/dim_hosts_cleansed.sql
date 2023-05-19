@@ -4,13 +4,13 @@
     )
 }} 
 
-WITH src_hosts AS (
+WITH stg_hosts AS (
     SELECT *
-    FROM {{ ref('src_hosts') }}
+    FROM {{ ref('stg_hosts') }}
 )
 SELECT host_id,
     NVL(host_name, 'Anonymous') AS host_name,
     is_superhost,
     created_at,
     updated_at
-FROM src_hosts
+FROM stg_hosts
