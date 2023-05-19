@@ -4,8 +4,24 @@ models:
   - name: src_hosts
     description: Source hosts table.
     columns:
-      - name: id
+      - name: host_id
         tests:
           - not_null
           - unique  
+
+  - name: src_listings
+    description: Source listings table.
+    columns:
+      - name: listing_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: src_reviews
+    description: Source reviews table.
+    columns:
+      - name: review_id
+        tests:
+          - not_null
+          - unique 
 
