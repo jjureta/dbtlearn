@@ -10,6 +10,11 @@ sources:
 
       - name: hosts
         identifier: raw_hosts
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique  
 
       - name: reviews
         identifier: raw_reviews

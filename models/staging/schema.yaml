@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: src_hosts
+    description: Source hosts table.
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique  
+

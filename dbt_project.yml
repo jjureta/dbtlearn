@@ -39,6 +39,6 @@ models:
       - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
     dim:
       +materialized: table
-    src:
+    staging:
       +materialized: ephemeral
 
