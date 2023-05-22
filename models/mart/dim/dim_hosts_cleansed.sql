@@ -11,8 +11,8 @@ WITH stg_hosts AS (
 
 SELECT
     host_id,
-    COALESCE(host_name, 'Anonymous') AS host_name,
     is_superhost,
     created_at,
-    updated_at
+    updated_at,
+    COALESCE(host_name, 'Anonymous') AS host_name
 FROM stg_hosts
