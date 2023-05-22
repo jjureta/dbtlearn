@@ -9,13 +9,14 @@ WITH stg_reviews AS (
     SELECT *
     FROM {{ ref('stg_reviews') }}
 )
-SELECT 
-    *
+
+SELECT *
 FROM stg_reviews
-WHERE review_text is not null 
+WHERE
+    review_text IS NOT NULL
     {% if is_incremental() %}
-    AND review_date > (
-        select max(review_date)
-        from {{ this }}
-    ) 
+        AND review_date > (
+            SELECT max(review_date)
+            FROM {{ this }}
+        )
     {% endif %}

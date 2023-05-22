@@ -3,8 +3,9 @@ WITH raw_hosts AS (
     FROM {{ source('airbnb', 'hosts') }}
 )
 
-SELECT id as host_id,
-    name as host_name,
+SELECT
+    id AS host_id,
+    name AS host_name,
     is_superhost,
     created_at,
     updated_at

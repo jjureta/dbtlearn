@@ -8,7 +8,9 @@ WITH stg_listings AS (
     SELECT *
     FROM {{ ref('stg_listings') }}
 )
-SELECT listing_id,
+
+SELECT
+    listing_id,
     listing_name,
     room_type,
     CASE
